@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """Defines the Marketer class."""
-from base_model import BaseModel
+from models.base_model import BaseModel
 
 
-class Marketer:
-    """This class defines the marketer"""
-    def __init__(self, name, contact_info):
+class Marketer(BaseModel):
+    """This class defines the marketer object"""
         self.name = name
         self.contact_info = contact_info
         self.products_for_sale = []

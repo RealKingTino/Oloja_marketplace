@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """Defines the Cart class."""
-from base_model import BaseModel
+from models.base_model import BaseModel
 
 
-class Cart:
-    def __init__(self):
+class Cart(BaseModel):
+    """This class detines an cart object"""
         self.user = None
         self.items = {}
 
