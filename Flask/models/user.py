@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 """This module contains the User class"""
 from .base_model import BaseModel, Base
-from sqlalchemy.orm import relationship
-from sqlalchemy import Column, String
+from models import db, Column, String
 
-
-class User(BaseModel, Base):
+class User(db.Model, BaseModel, Base):
     """This class define the user"""
     __tablename__ = "users"
     user_name = Column(String(256), nullable=False)
@@ -13,7 +11,6 @@ class User(BaseModel, Base):
     password = Column(String(256), nullable=False)
     shipping_address = Column(String(256), nullable=False)
     payment_info = Column(String(256), nullable=False)
-
 
     def update(self, **kwargs):
         """this method is used to update the users information"""
