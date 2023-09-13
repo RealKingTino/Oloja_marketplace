@@ -20,6 +20,11 @@ def signup():
         password = request.form['password']
         address = request.form['address']
         payment = request.form['payment_info']
+
+        exiting_user = db.session.query(User).filter(User.email == email).first()
+        if exiting_user:
+            return "Email already in use. Please choose another email address."
+
         user = User(user_name=username, email=email, password=password, shipping_address=address, payment_info=payment)
 
         db.session.add(user)
@@ -41,4 +46,4 @@ def login():
     return render_template('login.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8000)
