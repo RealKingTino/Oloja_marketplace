@@ -6,11 +6,13 @@ from models import db, Column, String
 class User(db.Model, BaseModel, Base):
     """This class define the user"""
     __tablename__ = "users"
+
     user_name = Column(String(256), nullable=False)
     email = Column(String(256), nullable=False)
     password = Column(String(256), nullable=False)
     shipping_address = Column(String(256), nullable=False)
     payment_info = Column(String(256), nullable=False)
+    cart = Column(String, default={}, nullable=False)
 
     def update(self, **kwargs):
         """this method is used to update the users information"""

@@ -32,6 +32,15 @@
 
 	</ol>
     </article>
+	<!-- Add a section to display the user's cart contents -->
+    <article class="cart">
+        <h2>Your Cart</h2>
+        <ul>
+            {% for product_id, quantity in user.cart.items() %}
+                <li>Product {{ product_id }}: Quantity {{ quantity }}</li>
+            {% endfor %}
+        </ul>
+    </article>
     <h2>HELLO WORLD</h2>
 </div>
 {% endblock %}

@@ -33,3 +33,25 @@ def login():
         if user.password == password:
             return render_template('account.html', user=user)
     return render_template('login.html')
+
+@app.route('/add_to_cart/<int:product_id>')
+def add_to_cart(product_id):
+    if 'user_id' in session:
+        user_id = session['user_id']
+        user = db.session.query(User).get(user_id)
+
+        if user:
+            if product_id in user.cart:
+                user.cart[product_id] += 1
+            else:
+                user.cart[product_id] = 1
+
+            db.session.commit()
+            return redirect('/')
+    
+    return redirect('/login')
+
+@app.route('/market')
+def market():
+    products = db.session.query(Product).all()
+    return render_template('market.html', products=products)
