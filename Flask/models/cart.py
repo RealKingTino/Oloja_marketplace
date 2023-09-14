@@ -6,7 +6,7 @@ from sqlalchemy.orm import relationship
 
 class Cart(db.Model, BaseModel):
     """This class defines a cart object"""
-    __tablename__ = "carts"
+    __tablename__ = "cart"
 
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     user = relationship("User", back_populates="cart")
