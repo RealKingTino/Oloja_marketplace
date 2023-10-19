@@ -6,4 +6,20 @@
 
 {% block body %}
     {{ super() }}
+    <section class="flex flex-row-reverse items-center justify-between my-11 px-[4rem]">
+        {% block section %}
+            <article>
+                <h3>Best Service</h3>
+                <p>Get the Best Product</p>
+                <ul>
+                    <li>Deals for Every Budget</li>
+                    <li>Best Price Guaranteed</li>
+                    <li>Support 24/7</li>
+                </ul>
+            </article>
+            <article>
+            </article>
+        {% endblock section %}
+    </section>
+    {% include 'footer.html' %}
 {% endblock body %}

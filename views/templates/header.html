@@ -1,0 +1,30 @@
+<header class="w-full flex items-center border justify-between px-8 py-6 md:px-[2rem] md:py-[1.2rem]">
+{% block header %}
+    <h1 class="font-semibold">Marketplace</h1>
+        <nav class="flex md:w-3/4 text-sm items-center justify-evenly">
+            <ul class="hidden md:flex items-center justify-between space-x-10">
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Brands</a></li>
+                <li><a href="#">Categories</a></li>
+                <li class="relative">
+                    <span class="absolute top-2 text-slate-300 right-2"><iconify-icon icon="ic:twotone-search" width="24"></iconify-icon></span>
+                    <input class="border rounded-lg px-4 py-2" type="search" name="search" placeholder="Search">
+                </li>
+            </ul>
+            <ul class="md:hidden flex items-center justify-between space-x-3">
+                <li class="relative">
+                    <span class="absolute top-2 text-slate-300 right-2"><iconify-icon icon="ic:twotone-search" width="24"></iconify-icon></span>
+                    <input class="border rounded-lg px-4 py-2" type="search" name="search" placeholder="Search">
+                </li>
+                <div>
+                    <button>click</button>
+                </div>
+            </ul>
+            <ul class="hidden md:flex items-center justify-between space-x-8">
+                <li class="flex items-center space-x-2"><span><iconify-icon icon="mdi:cart-outline"></iconify-icon></span><a href="#">Cart</a></li>
+                <li class="flex items-center space-x-2"><span><iconify-icon icon="material-symbols:help-outline"></iconify-icon></span><a href="#">Help</a></li>
+                <li><a href="#"><iconify-icon icon="mingcute:user-4-line" width="24"></iconify-icon></a></li>
+            </ul>
+        </nav>
+{% endblock header %}
+</header>
