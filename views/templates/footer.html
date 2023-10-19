@@ -1,5 +1,7 @@
-<footer class="w-full flex flex-wrap text-sm flex-row md:items-center justify-between px-[4rem] py-[1.2rem]">
+{% include 'contact.html' %}
+<footer>
     {% block footer %}
+    <section class="w-full flex flex-wrap text-sm flex-row md:items-center justify-between px-[4rem] py-[1.2rem]">
         <article class="w-1/2 md:w-1/3">
             <h3 class="font-semibold text-lg mb-2">Marketplace</h3>
             <p>Redefining connections and transactions in West Africa.
@@ -35,5 +37,9 @@
                 <li><a href="#">Twitter</a></li>
             </ul>
         </article>
+    </section>
+    <article class="text-center p-4 border text-sm">
+        All right reserved &copy;copyright Markektplace 2023
+    </article>
     {% endblock footer %}
 </footer>
