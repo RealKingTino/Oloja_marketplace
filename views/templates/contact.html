@@ -1,5 +1,29 @@
-<section>
+<section class="flex flex-col items-center">
     {% block contact %}
-        
+    <div class="text-center">
+        <h1 class="text-3xl font-bold">Contact us</h1>
+        <p class="font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="flex flex-col md:flex-row px-[4rem] py-[3rem] items-center justify-between">
+        <div class="md:w-2/5">
+            <h1 class="text-xl font-bold">Keep in Touch</h1>
+            <p class="font-light">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Fuga nihil ipsa quibusdam, quam officiis facere voluptate 
+                nesciunt dolore omnis fugit iure. Tempore molestiae alias 
+                aspernatur repellendus blanditiis consequatur mollitia aliquid.
+            </p>
+        </div>
+        <div class="md:w-2/4 my-4 md:my-0">
+            <form action="" class="grid grid-cols-2 gap-4">
+                <input type="text" name="name" placeholder="Fullname" class="border px-4 py-3 rounded-lg" id="">
+                <input type="email" name="email" placeholder="Email" class="px-4 py-3 border rounded-lg" id="">
+                <textarea name="comment" id="" cols="40" row="20" class="text-slate-400 w-full border rounded-lg col-span-2">
+                Type message here...
+                </textarea>
+                <input type="submit" value="Send" class="border bg-blue-500 font-semibold text-slate-50 rounded-lg px-4 py-3">
+            </form>
+        </div>
+    </div>
     {% endblock contact %}
 </section>
