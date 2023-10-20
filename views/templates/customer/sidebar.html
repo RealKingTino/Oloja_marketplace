@@ -1,0 +1,19 @@
+<nav class="fixed w-1/4 h-full border px-8">
+    {% block sidenav %}
+    <ul class="text-sm flex items-center flex-col mt-10">
+        <li>
+            <div class="border rounded-full w-32 h-32"></div>
+        </li>
+        <li><h1 class="font-semibold text-lg">Great Minds</h1></li>
+        <li>234-567-xxx</li>
+    </ul>
+    <ul class="w-full cursor-pointer text-base text-slate-600 flex mt-4 flex-col items-start justify-between space-y-6">
+        <li class="border rounded-lg px-4 py-2 w-full bg-blue-900 text-slate-100">Dashboard</li>
+        <li>Orders</li>
+        <li>Products</li>
+        <li>Inbox</li>
+        <li>Account Management</li>
+        <li>Logout</li>
+    </ul>
+    {% endblock sidenav %}
+</nav>

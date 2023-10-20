@@ -6,6 +6,7 @@
 
 {% block body %}
     {{ super() }}
+    {% include 'main.html' %}  
     <section class="flex flex-col-reverse md:flex-row-reverse w-full items-center justify-between my-11 px-[4rem] py-[2rem] border">
         {% block section %}
             <article class="md:w-2/3 space-y-2">
