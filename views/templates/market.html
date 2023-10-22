@@ -6,69 +6,91 @@
 
 {% block body %}
     {{ super() }}
-    <div class="container overflow w-full" style="height: calc(100vh -25%)">
-        {% include 'sidebar.html' %}
-        <div class="border w-9/12 px-8 py-4 right-0 fixed">
-            <h1 class="text-xl font-semibold">Product Details</h1>
-            <div class="flex flex-col space-y-4 items-start w-full">
-                <div class="border rounded-lg grid grid-cols-2 w-full">
-                    <div class="flex flex-row p-4 space-x-2">
-                        <div class="grid grid-rows-4 gap-2">
-                            <div class="w-20 h-20 rounded-lg  bg-slate-300"></div>
-                            <div class="w-20 h-20 rounded-lg  bg-slate-300"></div>
-                            <div class="w-20 h-20 rounded-lg  bg-slate-300"></div>
-                            <div class="w-20 h-20 rounded-lg  bg-slate-300"></div>
+    <div class="w-full overflow-x-hidden">
+        {% include 'sidebar.html' %} 
+        <div class="w-full md:w-9/12 px-8 py-4 overflow-y-auto md:ml-80">
+            <div class="mt-20">
+                <h1 class="text-xl font-semibold">Product Details</h1>
+                <div class="flex flex-col space-y-4 items-start w-full">
+                    <div class="border rounded-lg grid md:grid-cols-2 w-full">
+                        <div class="flex flex-row p-4 space-x-2">
+                            <div class="grid grid-rows-4 gap-2">
+                                <div class="w-20 h-20 rounded-lg  bg-slate-300"></div>
+                                <div class="w-20 h-20 rounded-lg  bg-slate-300"></div>
+                                <div class="w-20 h-20 rounded-lg  bg-slate-300"></div>
+                                <div class="w-20 h-20 rounded-lg  bg-slate-300"></div>
+                            </div>
+                            <div class="w-full h-full bg-slate-300 rounded-lg"></div>
                         </div>
-                        <div class="w-full h-full bg-slate-300 rounded-lg"></div>
-                    </div>
-                    <div class="px-6 py-2">
-                        <h3 class="text-sm text-slate-400">Great Minds</h3>
-                        <h1 class="text-lg font-semibold">Customer Reviews and Ratings</h1>
-                        <p class="text-sm text-slate-400 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, et? 
-                            Voluptates expedita quis autem ipsum quidem quas
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex flex-row items-center justify-between">
-                                <span>
-                                    <h2 class="text-2xl">Price: <strong>$xxx.xx</strong><sup class="text-sm">-xx off</sup></h2>
-                                </span>
-                                <span>
-                                    <p>4.8</p>
-                                </span>
-                            </div>
-                            <div class="flex items-center justify-between flex-row">
-                                <p class="flex items-center text-sm">
-                                    <span class="font-semibold">Select size:&nbsp;</span>  
-                                    <select name="choice" id="" class="border rounded-lg text-sm px-4 py-2 text-slate-300">
-                                        <option value="none">Choose you size</option>
-                                    </select>
-                                </p>
-                                <p class="flex items-center text-sm space-x-2">
-                                    <span class="font-semibold">Quatity:&nbsp;</span>
-                                    <select name="choice" class="border rounded-lg text-sm text-slate-300 px-4 py-2" id="">
-                                        <option value="none">0</option>
-                                    </select>
-                                </p>
-                            </div>
-
+                        <div class="px-6 py-2">
+                            <h3 class="text-sm text-slate-400">Great Minds</h3>
+                            <h1 class="text-lg font-semibold">Customer Reviews and Ratings</h1>
+                            <p class="text-sm text-slate-400 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, et? 
+                                Voluptates expedita quis autem ipsum quidem quas
+                            </p>
                             <div class="space-y-4">
-                                <p class="flex items-center">
-                                    Color: <input type="radio" name="" id="">
-                                </p>
-                                <button class="px-4 py-2 rounded-lg border">Buy Now</button>
-                                <button class="px-4 py-2 rounded-lg border">Add to cart</button>
+                                <div class="flex flex-row items-center justify-between">
+                                    <span>
+                                        <h2 class="text-2xl">Price: <strong>$xxx.xx</strong><sup class="text-sm">-xx off</sup></h2>
+                                    </span>
+                                    <span>
+                                        <p>4.8</p>
+                                    </span>
+                                </div>
+                                <div class="flex items-center justify-between flex-row">
+                                    <p class="flex items-center text-sm">
+                                        <span class="font-semibold">Select size:&nbsp;</span>  
+                                        <select name="choice" id="" class="border rounded-lg text-sm px-4 py-2 text-slate-300">
+                                            <option value="none">Choose you size</option>
+                                        </select>
+                                    </p>
+                                    <p class="flex items-center text-sm space-x-2">
+                                        <span class="font-semibold">Quatity:&nbsp;</span>
+                                        <select name="choice" class="border rounded-lg text-sm text-slate-300 px-4 py-2" id="">
+                                            <option value="none">0</option>
+                                        </select>
+                                    </p>
+                                </div>
+
+                                <div class="space-y-4">
+                                    <p class="flex items-center">
+                                        Color: <input type="radio" name="" id="">
+                                    </p>
+                                    <button class="px-4 py-2 rounded-lg border">Buy Now</button>
+                                    <button class="px-4 py-2 rounded-lg border">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border rounded-md w-full flex flex-col">
+                        <div class="flex flex-row items-start text-slate-400 space-x-4 border-b px-4 pt-4 pb-2">
+                            <h2>Description</h2>
+                            <h2>Reviews</h2>
+                        </div>
+                        <div class="flex flex-row">
+                            <div class="flex flex-row items-center w-9/12">
+                                <div class="px-3 py-3 border border-b flex flex-col md:flex-row items-center justify-start">
+                                    <div class="flex flex-col items-center md:w-1/4">
+                                        <div class="rounded-full w-20 h-20 bg-slate-200"></div>
+                                        <h1 class="text-sm font-semibold">Aliyu Adekola</h1>
+                                        <p class="text-slate-400 text-sm">20 Nov, 2023</p>
+                                    </div>
+                                    <div class="md:w-3/5">
+                                        <p class="text-sm text-left text-slate-400">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            perspiciatis odit dolor.
+                                        </p>
+                                        <p class="text-sm text-slate-400">Thanks (234)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <h2></h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="border rounded-md w-full flex flex-row">
-                    <div>
-                        Description
-                        Reviews
-                    </div>
-                    <div></div>
-                </div>
-            </div>
+            </div>  
         </div>
     </div>
 {% endblock body %}
