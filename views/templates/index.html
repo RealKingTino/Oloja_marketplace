@@ -7,42 +7,49 @@
 {% block body %}
     {{ super() }}
     {% include 'main.html' %}  
-    <section class="flex flex-col-reverse md:flex-row-reverse  w-full items-center justify-between my-11 px-[4rem] py-[2rem] border">
+    <section class="grid grid-flow-row gap-4 md:grid-cols-2  w-full items-center my-11 px-[4rem] py-[2rem]">
         {% block section %}
-            <article class="md:w-2/3 space-y-2">
-                <h3 class="text-3xl font-bold">Best Service</h3>
-                <p class="font-normal text-lg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            <article class="p-4">
+                <img src="../static/images/momo2.jpg" alt="#" class="w-full rounded-lg">
+            </article>
+            <article class="w-full p-4 text-blue-900 space-y-4">
+                <h3 class="text-3xl font-light">Best Service</h3>
+                <p class="font-light text-lg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                     Sed asperiores eos tenetur dolorem obcaecati vero sint hic.
                     Veniam quam aperiam odio facilis est saepe dolor officia, enim velit, deleniti sed.</p>
-                <ul class="list-disc list-outside">
+                <ul class="list-item space-y-2 font-light">
                     <li>Deals for Every Budget</li>
                     <li>Best Price Guaranteed</li>
                     <li>Support 24/7</li>
                 </ul>
             </article>
-                <img src="" alt="#" class="w-full">
-            <article>
-            </article>
+            
         {% endblock section %}
     </section>
     <div class="px-[4rem] py-[1.2rem] grid md:grid-flow-col grid-flow-row gap-4">
         {% block divider %}
             <article class="rounded-lg border flex flex-col items-center md:space-y-0 space-y-4 p-3">
-                <div class="rounded-full text-center border p-10"></div>
+                <div class="rounded-full text-center border p-4 w-20 h-20">
+                    <iconify-icon icon="mdi:truck-fast" width="50" height="50"></iconify-icon>
+                </div>
                 <div class="flex flex-col items-center justify-center text-center">
                     <h3 class="font-semibold text-lg">Fast Delivery</h3>
                     <p class="text-ellipsis text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
             </article>
             <article class="rounded-lg border flex flex-col items-center space-y-4 p-3">
-                <div class="rounded-full text-center border p-10"></div>
+                <div class="rounded-full text-center border p-4 w-20 h-20">
+                    <iconify-icon icon="ion:card" width="50" height="50"></iconify-icon>
+                </div>
                 <div class="flex flex-col items-center justify-center text-center">
                     <h3 class="font-semibold text-lg">Secure Payments</h3>
                     <p class="text-ellipsis text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
             </article>
             <article class="rounded-lg border flex flex-col items-center space-y-4 p-3">
-                <div class="rounded-full text-center border p-10"></div>
+                <div class="rounded-full text-center border p-4 w-20 h-20">
+                    <iconify-icon icon="fa6-solid:person-walking-arrow-loop-left" width="50" height="50"></iconify-icon>
+                </div>
                 <div class="flex flex-col items-center justify-center text-center">
                     <h3 class="font-semibold text-lg">7days Return Policy</h3>
                     <p class="text-ellipsis text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>

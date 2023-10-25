@@ -8,11 +8,9 @@ def index():
 def login():
     return render_template("login.html")
 
-"""
-@app.route('/customer')
-def customer():
-    return render_template("customer/details.html")
-"""
+@app.route('/details')
+def details():
+    return render_template("market_details.html")
 
 @app.route('/product')
 def customer():

@@ -1,15 +1,15 @@
 {% include 'contact.html' %}
 <footer>
     {% block footer %}
-    <section class="w-full flex flex-wrap text-sm flex-row md:items-center justify-between px-[4rem] py-[1.2rem]">
+    <section class="w-full flex flex-wrap bg-black text-white text-sm flex-row md:items-center justify-between px-[4rem] py-[1.2rem]">
         <article class="w-1/2 md:w-1/3">
             <h3 class="font-semibold text-lg mb-2">Marketplace</h3>
-            <p>Redefining connections and transactions in West Africa.
+            <p class="font-light">Redefining connections and transactions in West Africa.
                 Explore our contactless marketplace for local business.
                 Join us in shaping a future of convenience and possiblities.</p>
             <div class="mt-4">
                 <input class="border rounded-lg px-4 py-2" type="email" name="email" placeholder="Email">
-                <button class="border rounded-lg px-4 py-2">Subscribe</button>
+                <button class="rounded-lg px-4 py-2 bg-slate-500 hover:bg-slate-400 outline-none">Subscribe</button>
             </div>
         </article>
         <article>
@@ -38,7 +38,7 @@
             </ul>
         </article>
     </section>
-    <article class="text-center p-4 border text-sm">
+    <article class="text-center p-4 border text-sm text-white bg-black">
         All right reserved &copy;copyright Markektplace 2023
     </article>
     {% endblock footer %}
