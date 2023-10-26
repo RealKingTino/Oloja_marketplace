@@ -6,7 +6,7 @@ def index():
 
 @app.route('/login')
 def login():
-    return render_template("login.html")
+    return render_template("auth/login.html")
 
 @app.route('/details')
 def details():
