@@ -1,5 +1,9 @@
+#!/usr/bin/python3
+""" Defines the product class """
+
 from .base_model import BaseModel
-from models import db, Column, String, Integer, Float
+from models import Column, String, Integer, Float
+from models.db_storage import DBStorage
 
 class Product(BaseModel):
     """This class defines a product."""
@@ -25,15 +29,30 @@ class Product(BaseModel):
 
     def read(self, product_id):
         """Read product details."""
-        pass
+        product = db_storage.get(Product, product_id)
+        return product
 
     def update(self, product_id, **kwargs):
         """Update product details."""
-        pass
+        product = db_storage.get(Product, product_id)
+    if product:
+        for key, value in kwargs.items():
+            setattr(product, key, value)
+        db_storage.save()
+        return product
+    else:
+        return None
+
 
     def delete(self, product_id):
         """Delete a product."""
-        pass
+        product = db_storage.get(Product, product_id)
+    if product:
+        db_storage.delete(product)
+        db_storage.save()
+        return True
+    else:
+        return False
 
     def calculate_discount(self, discount_percentage):
         """Calculate the discount on the product price."""
