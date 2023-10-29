@@ -36,14 +36,23 @@ def delete_user(id):
 @app_views.route('/users/', methods=['POST'])
 def create_user():
     """create a new user object"""
-    if not request.get_json():
+    req = request.get_json()
+    if not req:
         abort(400, "Not a JSON")
 
-    if 'name' not in request.get_json():
+    if 'name' not in req:
         abort("Missing name")
+    if 'password' not in req:
+        abort("Missing password")
+    if 'email' not in req:
+        abort("Missing email")
 
-    new = User()
-    new.name = request.get_json()['name']
+    users = storage.all(User).value()
+    for user in users:
+        if user.email == req['email']:
+            abort("Email already in use")
+
+    new = User(**req)
     storage.new(new)
     storage.save()
 
@@ -61,7 +70,7 @@ def update_user(id):
     if not dic:
         abort(400, "Not a JSON")
     for key, value in dic.items():
-        if key is not "created_at" and key is not "updated_at":
+        if key != "created_at" and key != "updated_at" and key != "id":
             setattr(obj, key, value)
     storage.save()
     return jsonify(obj.to_dict()), 200
