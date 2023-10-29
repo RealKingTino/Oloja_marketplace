@@ -1,11 +1,26 @@
 #!/usr/bin/python3
 """Defines the Cart class."""
+<<<<<<< HEAD
 from models.base_model import BaseModel
 
 
 class Cart(BaseModel):
     """This class detines an cart object"""
         self.user = None
+=======
+from .base_model import BaseModel, Base
+from models import Column, Integer, ForeignKey, String
+from sqlalchemy.orm import relationship
+
+class Cart(BaseModel, Base):
+    """This class defines a cart object"""
+    __tablename__ = "carts"
+
+    user_id = Column(String(60), ForeignKey("users.id"), nullable=False)
+
+    def __init__(self, user):
+        self.user = user
+>>>>>>> 282cdc1c5ce6572a4930c1c436f3593bde363c95
         self.items = {}
 
     def add_item(self, product, quantity=1):

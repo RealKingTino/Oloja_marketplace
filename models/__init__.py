@@ -1,7 +1,13 @@
-#!/usr/bin/python3
-"""A Module that defines all common attributes/ method for other classes"""
-from models.engine.file_storage import FileStorage
+from flask import Flask, render_template, request, redirect
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Column, String, DateTime, text, Integer, ForeignKey
+from sqlalchemy.orm import declarative_base
 
+app = Flask(__name__)
 
-storage = FileStorage()
+from models.engine.db_storage import DBStorage
+storage = DBStorage()
 storage.reload()
+app.app_context().push()
+
+from models import route

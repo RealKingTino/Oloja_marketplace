@@ -1,14 +1,19 @@
 #!/usr/bin/python3
 """This module contains the Order class"""
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
+from models import Column, String, Integer
+from sqlalchemy.orm import relationship
 
-class Order(BaseModel):
+
+class Order(BaseModel, Base):
     """This class detines an oder object"""
-    products = []
-    total_price = 0
-    no_of_product = 0
-    status = ""
-    shiping_details = ""
+    __tablename__ = "orders"
+
+    products = Column(String(60), nullable=False)
+    total_price = Column(Integer, nullable=False)
+    no_of_product = Column(Integer, nullable=False)
+    status = Column(String(60), nullable=False, default="pending")
+    shiping_details = Column(String(60), nullable=False)
 
     def create(self, items=[]):
         """This method creates an order"""

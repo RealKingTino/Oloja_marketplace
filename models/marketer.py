@@ -1,10 +1,24 @@
 #!/usr/bin/python3
 """Defines the Marketer class."""
+<<<<<<< HEAD
 from models.base_model import BaseModel
 
 
 class Marketer(BaseModel):
     """This class defines the marketer object"""
+=======
+from .base_model import BaseModel, Base
+from models import Column, String
+
+class Marketer(BaseModel, Base):
+    """This class defines the marketer"""
+    __tablename__ = "marketers"
+
+    name = Column(String(256), nullable=False)
+    contact_info = Column(String(256), nullable=False)
+
+    def __init__(self, name, contact_info):
+>>>>>>> 282cdc1c5ce6572a4930c1c436f3593bde363c95
         self.name = name
         self.contact_info = contact_info
         self.products_for_sale = []
