@@ -46,7 +46,7 @@ class BaseModel:
             else:
                 setattr(self, attr, value)
 
-    def to_dict(self):
+    def to_dict(self, secure=True):
         """Convert instance into dict format"""
         dictionary = self.__dict__.copy()
         dictionary['__class__'] = self.__class__.__name__
@@ -56,4 +56,9 @@ class BaseModel:
             del dictionary['_sa_instance_state']
         except KeyError:
             pass
+        if secure is True:
+            try:
+                del dictionary['password']
+            except KeyError:
+                pass
         return dictionary
