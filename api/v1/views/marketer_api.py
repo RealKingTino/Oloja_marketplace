@@ -2,19 +2,19 @@
 """this module handles all default RESTFul API actions for the Marketer"""
 from api.v1.views import app_views
 from flask import jsonify, abort, request
-from models.user import Marketer
+from models.marketer import Marketer
 from models import storage
 
 
 @app_views.route('/marketers/', methods=['GET'])
-def get_marketers():
+def get_marketer():
     """retrieves all Marketer objects"""
     dic = ([marketer.to_dict() for marketer in storage.all(Marketer).values()])
     return (jsonify(dic))
 
 
 @app_views.route('/marketers/<id>', methods=['GET'])
-def get_marketersr(id):
+def get_marketers(id):
     """retrieves one marketer object"""
     obj = storage.get(Marketer, id)
     if obj is None:
