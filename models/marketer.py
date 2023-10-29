@@ -1,10 +1,15 @@
 #!/usr/bin/python3
 """Defines the Marketer class."""
-from base_model import BaseModel
+from .base_model import BaseModel, Base
+from models import Column, String
 
-
-class Marketer:
+class Marketer(BaseModel, Base):
     """This class defines the marketer"""
+    __tablename__ = "marketers"
+
+    name = Column(String(256), nullable=False)
+    contact_info = Column(String(256), nullable=False)
+
     def __init__(self, name, contact_info):
         self.name = name
         self.contact_info = contact_info

@@ -1,5 +1,4 @@
 # Oloja Marketplace
-The plaform that connets rural business with a wider market. Oloja means &quot;SELLER&quot; in yoruba.
 
 ## Problem Statement
 Many small-scale businesses in rural areas face significant challenges in expanding their reach and accessing new customers. Limited resources, lack of digital presence, and difficulties in obtaining loans often hinder their growth. These businesses struggle to connect with a wider audience and often rely solely on local customers, missing out on broader market opportunities.
