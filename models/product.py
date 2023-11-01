@@ -5,6 +5,7 @@ from .base_model import BaseModel
 from models import Column, String, Integer, Float
 from models.db_storage import DBStorage
 
+
 class Product(BaseModel):
     """This class defines a product."""
     __tablename__ = "products"
@@ -17,7 +18,8 @@ class Product(BaseModel):
     price = Column(Float, nullable=False)
     stock_quantity = Column(Integer, nullable=False)
 
-    def create(self, location, product_name, description, image, category, price, stock_quantity):
+    def create(self, location, product_name, description,
+               image, category, price, stock_quantity):
         """Create a new product."""
         self.location = location
         self.product_name = product_name
@@ -40,9 +42,7 @@ class Product(BaseModel):
             setattr(product, key, value)
         db_storage.save()
         return product
-    else:
-        return None
-
+    return None
 
     def delete(self, product_id):
         """Delete a product."""
@@ -51,8 +51,7 @@ class Product(BaseModel):
         db_storage.delete(product)
         db_storage.save()
         return True
-    else:
-        return False
+    return False
 
     def calculate_discount(self, discount_percentage):
         """Calculate the discount on the product price."""
