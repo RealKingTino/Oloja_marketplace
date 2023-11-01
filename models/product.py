@@ -37,21 +37,21 @@ class Product(BaseModel):
     def update(self, product_id, **kwargs):
         """Update product details."""
         product = db_storage.get(Product, product_id)
-    if product:
-        for key, value in kwargs.items():
-            setattr(product, key, value)
-        db_storage.save()
-        return product
-    return None
+        if product:
+            for key, value in kwargs.items():
+                setattr(product, key, value)
+            db_storage.save()
+            return product
+        return None
 
     def delete(self, product_id):
         """Delete a product."""
         product = db_storage.get(Product, product_id)
-    if product:
-        db_storage.delete(product)
-        db_storage.save()
-        return True
-    return False
+        if product:
+            db_storage.delete(product)
+            db_storage.save()
+            return True
+        return False
 
     def calculate_discount(self, discount_percentage):
         """Calculate the discount on the product price."""
