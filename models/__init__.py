@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, String, DateTime, text, Integer, ForeignKey
+from sqlalchemy import Column, String, DateTime, text, Integer, ForeignKey, Float
 from sqlalchemy.orm import declarative_base
 
 app = Flask(__name__)
