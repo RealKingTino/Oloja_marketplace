@@ -10,4 +10,4 @@ storage = DBStorage()
 storage.reload()
 app.app_context().push()
 
-from models import route
+from models import route, Float

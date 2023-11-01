@@ -2,7 +2,7 @@
 """ Defines the product class """
 
 from .base_model import BaseModel
-from models import Column, String, Integer
+from models import Column, String, Integer, Float
 from models.db_storage import DBStorage
 
 
