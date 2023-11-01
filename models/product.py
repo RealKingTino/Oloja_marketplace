@@ -2,7 +2,7 @@
 """ Defines the product class """
 
 from .base_model import BaseModel
-from models import Column, String, Integer, Float
+from models import Column, String, Integer
 from models.db_storage import DBStorage
 
 
@@ -41,8 +41,7 @@ class Product(BaseModel):
             for key, value in kwargs.items():
                 setattr(product, key, value)
             db_storage.save()
-            return product
-        return None
+        return product
 
     def delete(self, product_id):
         """Delete a product."""
