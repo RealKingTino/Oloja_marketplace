@@ -1,8 +1,5 @@
 Flask
 SQLAlchemy
-<<<<<<< HEAD
+requests
 Flask-WTF
-
-=======
 Gunicorn
->>>>>>> 2019f056c05508f1b2a6a3433753dee92fb94b69
