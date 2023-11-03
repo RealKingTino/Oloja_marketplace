@@ -1,0 +1,12 @@
+<nav id="sidenav" class="z-50 w-1/2 fixed h-full hidden md:hidden bg-gray-50 top-0 px-8 py-4 right-0 text-sm">
+    {% block nav %}
+    <ul class="space-y-5 mt-3">
+       <li><a href="/product">Product</a></li>
+       <li><a href="/product">Brands</a></li>
+       <li><a href="/product">Categories</a></li>
+    </ul>
+    <button id="dismiss" class="absolute text-gray-400 top-4 right-4 text-xl">
+        x
+    </button>
+    {% endblock nav %}
+</nav>

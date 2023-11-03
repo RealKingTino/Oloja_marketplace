@@ -19,10 +19,9 @@ function dismissal (element, attribute) {
 }
 
 document.querySelector('#toggler').addEventListener('click', function () {
-    /*toggle(document.querySelector('.sidenav'), 'hidden');*/
-    alert("I'm working!")
+    toggle(document.querySelector('#sidenav'), 'hidden');
 }, false);
 
-document.querySelector('.list').addEventListener('click', function () {
-    toggle(document.querySelector('.m_stack'), 'hidden');
+document.querySelector('#dismiss').addEventListener('click', function () {
+    toggle(document.querySelector('#sidenav'), 'hidden');
 }, false);
