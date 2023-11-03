@@ -12,4 +12,8 @@ app.register_blueprint(auth_blueprint)
 
 @app.errorhandler(404)
 def not_found_error(error):
+    """ 404 Not found
+        -----
+        return an error when page not found
+    """
     return render_template('errors/404.html'), 404

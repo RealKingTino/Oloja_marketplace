@@ -7,10 +7,10 @@
 {% block body %}
     {{ super() }}
     {% include 'main.html' %}  
-    <section class="grid grid-flow-row gap-4 md:grid-cols-2  w-full items-center my-11 px-[4rem] py-[2rem]">
+    <section class="grid grid-flow-row gap-4 md:grid-cols-2  w-full items-center my-11 px-8 md:px-[4rem] py-[2rem]">
         {% block section %}
-            <article class="p-4">
-                <img src="../static/images/momo2.jpg" alt="#" class="w-full rounded-lg">
+            <article class="p-4 h-80">
+                <img src="../static/images/momo2.jpg" alt="#" class="w-full h-full object-cover rounded-lg">
             </article>
             <article class="w-full p-4 text-blue-900 space-y-4">
                 <h3 class="text-3xl font-light">Best Service</h3>
@@ -26,7 +26,7 @@
             
         {% endblock section %}
     </section>
-    <div class="px-[4rem] py-[1.2rem] grid md:grid-flow-col grid-flow-row gap-4">
+    <div class="px-8 md:px-[4rem] py-[1.2rem] grid md:grid-flow-col grid-flow-row gap-4">
         {% block divider %}
             <article class="rounded-lg border flex flex-col items-center md:space-y-0 space-y-4 p-3">
                 <div class="rounded-full text-center border p-4 w-20 h-20">
