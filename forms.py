@@ -9,14 +9,14 @@ class LoginForm(FlaskForm):
     """ a class that contain the login form"""
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField("Login")
+    submit = SubmitField("Sign in")
 
 
 class RegisterForm(FlaskForm):
     """a class for registration form"""
     firstname = StringField('First Name', validators=[DataRequired()])
     lastname = StringField('Last name', validators=[DataRequired()])
-    telephone = TelField('Telephone', validators=[DataRequired])
+    telephone = TelField('Telephone', validators=[DataRequired()])
     email = EmailField('Email', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField("Login")
+    submit = SubmitField("Sign up")
